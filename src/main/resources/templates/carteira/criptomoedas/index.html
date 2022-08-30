@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+<title>Sistema de Gestão de Cripto</title>
+
+<th:block th:include="fragments/geral.html :: headerfiles"> </th:block> 
+<link th:href="@{/css/criptomoedas.css}" rel="stylesheet" />
+</head>
+<body>
+	<header th:insert="fragments/geral.html :: header"> </header>
+
+	<div class="container my-2">
+		<a th:href="@{/carteira/criptomoedas/nova}" class="btn btn-primary btn-sm mb-3">Incluir Cripto</a>
+		<h1>Criptomoedas</h1>
+		<table border="1" class="table">
+			<thead  class="table">
+				<tr>
+					<th>Data</th>
+					<th>Nome</th>
+					<th>Quantidade</th>
+					<th>Cotação Atual</th>
+					<th>Preço Da Compra</th>
+					<th>Lucro %</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cripto : ${listaCriptomoedas.content}">
+					<td th:text="${cripto.dataDaCompra}"></td>
+					<td th:text="${cripto.nome}"></td>
+					<td th:text="${cripto.quantidade}"></td>
+					<td th:text="${cripto.preco}"></td>
+					<td th:text="${cripto.precoDaCompra}"></td>
+					<td th:text="${cripto.profit}"></td>
+					<td>
+						<a th:href="@{/carteira/criptomoedas/{id}(id=${cripto.id})}" class="btn btn-primary">Alterar</a>
+						<a th:href="@{/carteira/criptomoedas/excluir/{id}(id=${cripto.id})}" class="btn btn-danger">Excluir</a>			
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
