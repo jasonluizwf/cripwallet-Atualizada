@@ -34,7 +34,7 @@ public class CriptomoedasInicialBanco implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		Date dataDaCompra = sdf.parse("30/08/2022");
+		Date dataDaCompra = sdf.parse("29/08/2022");
 
 		Criptomoeda c1 = new Criptomoeda("bitcoin");
 		c1.setDataDaCompra(dataDaCompra);

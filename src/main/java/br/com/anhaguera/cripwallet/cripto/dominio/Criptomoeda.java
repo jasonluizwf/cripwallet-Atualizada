@@ -24,7 +24,7 @@ public class Criptomoeda {
 	@Column(nullable = false)
 	private String nome;
 
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataDaCompra;
 
 	private Double preco;

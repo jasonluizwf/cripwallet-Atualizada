@@ -4,15 +4,17 @@
 <meta charset="UTF-8" />
 <title>Sistema de Gestão de Cripto</title>
 
-<th:block th:include="fragments/geral.html :: headerfiles"> </th:block> 
+<th:block th:include="fragments/geral.html :: headerfiles"> </th:block>
+
 <link th:href="@{/css/criptomoedas.css}" rel="stylesheet" />
+
 </head>
 <body>
 	<header th:insert="fragments/geral.html :: header"> </header>
 
 	<div class="container my-2">
 		<a th:href="@{/carteira/criptomoedas/nova}" class="btn btn-primary btn-sm mb-3">Incluir Cripto</a>
-		<h1>Criptomoedas</h1>
+		<h1>Transações</h1>
 		<table border="1" class="table">
 			<thead  class="table">
 				<tr>
@@ -27,7 +29,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="cripto : ${listaCriptomoedas.content}">
-					<td th:text="${cripto.dataDaCompra}"></td>
+					<td th:text="${#dates.format(cripto.dataDaCompra, 'dd/MM/yyyy')}"></td>
 					<td th:text="${cripto.nome}"></td>
 					<td th:text="${cripto.quantidade}"></td>
 					<td th:text="${cripto.preco}"></td>
