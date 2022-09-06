@@ -32,7 +32,7 @@ public class CriptomoedasInicialBanco implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-
+		/*
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataDaCompra = sdf.parse("29/08/2022");
 
@@ -50,5 +50,7 @@ public class CriptomoedasInicialBanco implements CommandLineRunner {
 		
 		usuarioRepo.save(u1);
 		usuarioRepo.save(u2);
+
+		 */
 	}
 }
